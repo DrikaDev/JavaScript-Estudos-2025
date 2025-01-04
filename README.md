@@ -1,2 +1,5 @@
-Repositório criado para guardar e documentar meus estudos com JS.
-Me comprometo a estudar todo dia até eu ficar craque nessa linguagem e por isso, vou iniciar do Zero!
+# Estudos de JavaScript 🟨👩🏻‍💻
+
+Este repositório foi criado para guardar e documentar meu progresso nos estudos de JavaScript.  
+Meu objetivo é me comprometer com o aprendizado diário até me tornar uma especialista na linguagem.  
+Estou re-começando do zero e compartilharei aqui tudo o que aprender ao longo dessa jornada.
