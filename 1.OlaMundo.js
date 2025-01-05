@@ -29,10 +29,10 @@ console.log(`O funcionário ${nomeFuncionario} tem um salário de ${salarioFunci
 
 // Utilizar o método parseInt() para converter a entrada do valor digitado que é uma string para um número.
 
-let valorA = parseInt(prompt("Digite um valor:"));
-let valorB = parseInt(prompt("Digite outro valor:"));
-let somaAB = valorA + valorB
-console.log(`A soma do valor ${valorA} mais o valor ${valorB} é igual a ${somaAB}`);
+let A = parseInt(prompt("Digite um valor:"));
+let B = parseInt(prompt("Digite outro valor:"));
+let somaAB = A + B
+console.log(`A soma do valor ${A} mais o valor ${B} é igual a ${somaAB}`);
 
 // 5- Faça um programa que leia as duas notas de um aluno em uma matéria e mostre na tela a sua média na disciplina.
 // Ex:
@@ -91,17 +91,42 @@ let mm = distancia * 1000;
 console.log(`A distância de ${distancia} em metros corresponde a:
     ${km} Km - Quilômetros, ${hm} Hm - Hectômetros, ${dam} Dam - Decâmetros, ${dm} dm - Decímetros, ${cm} cm - Centímetros e ${mm} mm - Milímetros`);
 
-
 // 9- Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$)
 // e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
 
-// 10) Faça um algoritmo que leia a largura e altura de uma parede, calcule e
-// mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,
+let carteira = parseFloat(prompt("Informe o valor que você tem na carteira:"));
+let valorDolar = 3.45;
+let podeComprar = parseInt(carteira / valorDolar);
+console.log(`Com o valor que você tem disponível na carteira de R$${carteira} reais, você pode comprar US$ ${podeComprar} dólares.`);
+
+// 10- Faça um algoritmo que leia a largura e altura de uma parede.
+// Calcule e mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,
 // sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
-// 11) Desenvolva uma lógica que leia os valores de A, B e C de uma equação do
-// segundo grau e mostre o valor de Delta.
-// 12) Crie um programa que leia o preço de um produto, calcule e mostre o seu
+
+let altura = parseFloat(prompt("Informe a altura da parede:"));
+let largura = parseFloat(prompt("Informe a largura da parede:"));
+let totalArea = (altura * largura);
+let quantidadeTinta = (totalArea / 2);
+
+console.log(`O total da área a ser pintada é de ${totalArea}m², e a quantidade de tinta necessária para o serviço é de ${quantidadeTinta} litros`);
+
+// 11- Desenvolva uma lógica que leia os valores de A, B e C de uma equação do
+// segundo grau e mostre o valor de Delta (fórmula Δ=B²−4⋅A⋅C).
+// Utilizar o método Math.pow(base, expoente) para calcular a potência de um número. Ele eleva um número base a um expoente especificado.
+
+let valorA = parseFloat(prompt("Digite o valor de A:"));
+let valorB = parseFloat(prompt("Digite o valor de B:"));
+let valorC = parseFloat(prompt("Digite o valor de C:"));
+let delta = Math.pow(valorB,2) - 4 * valorA * valorC;
+
+console.log(`O valor de Delta para os valores informados de A, B e C é: ${delta}`);
+
+// 12- Crie um programa que leia o preço de um produto, calcule e mostre o seu
 // PREÇO PROMOCIONAL, com 5% de desconto.
+
+
+
+
 // 13) Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o
 // seu novo salário, com 15% de aumento.
 // 14) A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva
