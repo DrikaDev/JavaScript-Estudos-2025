@@ -26,7 +26,6 @@ console.log(`O funcionário ${nomeFuncionario} tem um salário de ${salarioFunci
 // Digite um valor: 8
 // Digite outro valor: 5
 // A soma entre 8 e 5 é igual a 13.
-
 // Utilizar o método parseInt() para converter a entrada do valor digitado que é uma string para um número.
 
 let A = parseInt(prompt("Digite um valor:"));
@@ -39,7 +38,6 @@ console.log(`A soma do valor ${A} mais o valor ${B} é igual a ${somaAB}`);
 // Nota 1: 4.5
 // Nota 2: 8.5
 // A média entre 4.5 e 8.5 é igual a 6.5
-
 // Utilizar o método parseFloat() para converter a entrada do valor digitado que é uma string para um número de ponto flutuante (um número decimal).
 
 let nota1 = parseFloat(prompt("Digite a nota 1:"));
@@ -123,23 +121,61 @@ console.log(`O valor de Delta para os valores informados de A, B e C é: ${delta
 
 // 12- Crie um programa que leia o preço de um produto, calcule e mostre o seu
 // PREÇO PROMOCIONAL, com 5% de desconto.
+// Usar o toFixed() para formatar o valor final com duas casas decimais.
 
+let precoProduto = parseFloat(prompt("Digite o preço do produto: "));
+let precoPromocional = precoProduto - (precoProduto * 5 / 100);
+console.log(`O Preço Promocional desse produto é de R$ ${precoPromocional.toFixed(2)}`);
 
-
-
-// 13) Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o
+// 13- Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o
 // seu novo salário, com 15% de aumento.
-// 14) A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva
-// um programa que pergunte a quantidade de Km percorridos por um carro alugado e a
-// quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar,
-// sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado.
-// 15) Crie um programa que leia o número de dias trabalhados em um mês e mostre o
+
+let salario = parseFloat(prompt("Digite o valor do salário:"));
+let salarioComAumento = salario + (salario * 15 / 100);
+console.log(`O valor do novo salário com aumento de 15% é de R$ ${salarioComAumento.toFixed(2)}`);
+
+// 14- A locadora de carros precisa da sua ajuda para cobrar seus serviços. 
+// Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a
+// quantidade de dias pelos quais ele foi alugado. 
+// Calcule o preço total a pagar, sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado.
+// Usar o método toFixed() para formatar o valor final a pagar com duas casas decimais.
+// Usar o método isNaN() - is Not a Number - para validar que o valor de entrada seja um valor inválido.
+
+let kmPercorrido = parseFloat(prompt("Digite a quantidade de Km percorrido pelo carro alugado:"));
+let diasAlugado = parseInt(prompt("Digite a quantidade de dias que esteve alugado:"));
+
+if (isNaN(kmPercorrido) || isNaN(diasAlugado)) {
+    console.log("Por favor, insira valores válidos para Km percorridos e/ou dias alugado.");
+  } else {
+    let precoTotalPagar = (diasAlugado * 90) + (kmPercorrido * 0.20);
+    console.log(`O preço total a pagar é de R$ ${precoTotalPagar.toFixed(2)}`);
+  }
+
+// 15- Crie um programa que leia o número de dias trabalhados em um mês e mostre o
 // salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25
 // por hora trabalhada.
-// 16) [DESAFIO] Escreva um programa para calcular a redução do tempo de vida de um
-// fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele
+
+let numeroDiasTrabalhadosMes = parseInt(prompt("Digite o número de dias trabalhados no mês:"));
+
+if (isNaN(numeroDiasTrabalhadosMes)) {
+    console.log("Por favor, insira um número para dias trabalhados.");
+}else {
+    let salFuncionario = numeroDiasTrabalhadosMes * (8 * 25);
+    console.log(`O salário do funcionário neste mês é de R$ ${salFuncionario.toFixed(2)}`);
+}
+
+// 16- Escreva um programa para calcular a redução do tempo de vida de um fumante. 
+// Pergunte a quantidade de cigarros fumados por dias e quantos anos ele
 // já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule
 // quantos dias de vida um fumante perderá e exiba o total em dias.
+
+let quantidadeCigarrosFumadosDia = parseInt(prompt("Quantos cigarros você fuma por dia?"));
+let quantidadeAnosFumou = parseInt(prompt("Há quantos anos você fuma?"));
+let minutosPerdidos = (quantidadeCigarrosFumadosDia * 10) * (quantidadeAnosFumou * 365);
+let diasVidaPerdido = minutosPerdidos / (24 * 60);
+let diasArrendodados = Math.round(diasVidaPerdido);
+console.log(`Você já perdeu ${diasArrendodados} dias de vida. Seria melhor parar de fumar o quanto antes!`);
+
 // PASSO 02 - CONDIÇÕES BÁSICAS
 // 17) Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse
 // 80Km/h, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba
