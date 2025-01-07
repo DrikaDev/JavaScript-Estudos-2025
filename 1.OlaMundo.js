@@ -176,17 +176,64 @@ let diasVidaPerdido = minutosPerdidos / (24 * 60);
 let diasArrendodados = Math.round(diasVidaPerdido);
 console.log(`Você já perdeu ${diasArrendodados} dias de vida. Seria melhor parar de fumar o quanto antes!`);
 
-// PASSO 02 - CONDIÇÕES BÁSICAS
-// 17) Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse
-// 80Km/h, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba
-// o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.
-// 18) Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade
+// 17 - Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse
+// 80Km/h, exiba uma mensagem dizendo que o usuário foi multado. 
+// Nesse caso, exiba o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.
+
+let velocidadeAtual = parseInt(prompt("Digite a velocidade do carro:"));
+
+if (velocidadeAtual > 80) {
+  let velocidadeUltrapassada = velocidadeAtual - 80;
+  let valorMulta = velocidadeUltrapassada * 5;
+  console.log(`O usuário ultrapassou os 80Km/h e foi multado em R$ ${valorMulta.toFixed(2)}`);
+} else {
+  console.log("Velocidade dentro do limite permitido. Continue dirigindo assim!");  
+}
+
+// 18- Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade
 // dela e depois mostre se ela pode ou não votar.
-// 19) Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua
+// Voto obrigatório para maiores de 18 até 70 anos e
+// voto facultativo para maiores de 16 e menores de 18, ou acima de 70 anos.
+
+let anoNascimento = parseInt(prompt("Digite o ano de nascimento:"));
+let anoAtual = parseInt(prompt("Digite o ano atual:"));
+let calculoIdade = anoAtual - anoNascimento;
+
+if (calculoIdade >= 18 && calculoIdade <= 70) {
+  console.log("Você pode votar! O seu voto é obrigatório.");
+} else if (calculoIdade >= 16 || calculoIdade > 70) {
+  console.log("Você pode votar, mas seu voto é facultativo.");
+} else {
+  console.log("Você não pode votar.");
+}
+
+// 19- Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua
 // média e mostre na tela. No final, analise a média e mostre se o aluno teve ou
 // não um bom aproveitamento (se ficou acima da média 7.0).
-// 20) Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou
+
+let nomeAluno = prompt("Digite o nome do aluno:");
+let primeiraNota = parseFloat(prompt("Digite a primeira nota:"));
+let segundaNota = parseFloat(prompt("Digite a segunda nota:"));
+let mediaAluno = (primeiraNota + segundaNota) / 2;
+let media = 7;
+
+if (mediaAluno >= media) {
+  console.log(`Parabéns ${nomeAluno}, você passou! Sua média foi ${mediaAluno}.`);
+} else {
+  console.log(`Que pena ${nomeAluno}, você não passou! Sua média foi ${mediaAluno}.`);
+}
+
+// 20- Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou
 // ÍMPAR.
+
+let num = parseInt(prompt("Digite um número:"));
+
+if (num % 2 == 0 ) {
+console.log(`O número digitado ${num} é PAR.`);
+} else {
+  console.log(`O número digitado ${num} é ÍMPAR.`);
+}
+
 // 21) Faça um algoritmo que leia um determinado ano e mostre se ele é ou não
 // BISSEXTO.
 // 22) Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua
