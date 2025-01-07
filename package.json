@@ -1,0 +1,23 @@
+{
+  "name": "atividades---estudos-2025",
+  "version": "1.0.0",
+  "description": "Este repositório foi criado para guardar e documentar meu progresso nos estudos de JavaScript.  \r Meu objetivo é me comprometer com o aprendizado diário até me tornar uma especialista na linguagem.  \r Estou re-começando do zero e compartilharei aqui tudo o que aprender ao longo dessa jornada.",
+  "main": "1.OlaMundo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrikaDev/JS---Estudos-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrikaDev/JS---Estudos-2025/issues"
+  },
+  "homepage": "https://github.com/DrikaDev/JS---Estudos-2025#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

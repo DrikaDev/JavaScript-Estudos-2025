@@ -8,7 +8,6 @@ console.log("Olá Mundo!");
 // Olá João da Silva, é um prazer te conhecer!
 
 let nome = prompt("Olá, qual é o seu nome?")
-//console.log("Olá", nome, "é um prazer te conhecer!");
 console.log(`Olá ${nome}, é um prazer te conhecer!`);
 
 // 3- Crie um programa que leia o nome e o salário de um funcionário, mostrando no final uma mensagem.
@@ -234,14 +233,45 @@ console.log(`O número digitado ${num} é PAR.`);
   console.log(`O número digitado ${num} é ÍMPAR.`);
 }
 
-// 21) Faça um algoritmo que leia um determinado ano e mostre se ele é ou não
-// BISSEXTO.
+// 21) Faça um algoritmo que leia um determinado ano e mostre se ele é ou não BISSEXTO.
+// Para determinar se um ano é bissexto, execute estas etapas:
+
+// 1. Se o ano for uniformemente divisível por 4, vá para a etapa 2. Caso contrário, vá para a etapa 5.
+// 2. Se o ano for uniformemente divisível por 100, vá para a etapa 3. Caso contrário, vá para a etapa 4.
+// 3. Se o ano for uniformemente divisível por 400, vá para a etapa 4. Caso contrário, vá para a etapa 5.
+// 4. O ano é bissexto (tem 366 dias).
+// 5. O ano não é um ano bissexto (tem 365 dias).
+
+let ano = parseInt(prompt("Digite um ano:"));
+
+if (isNaN(ano)) {
+  console.log("Por favor, insira um ano válido.");
+}else{
+  function anoBissexto(ano) {
+    if ((ano % 4 === 0 && ano % 100 != 0) || ano % 400 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  if (anoBissexto(ano)) {
+    console.log(`O ano ${ano} é bissexto.`);
+  } else {
+    console.log(`O ano ${ano} não é bissexto.`);
+  }
+}
+
 // 22) Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua
 // situação em relação ao alistamento militar.
 //  - Se estiver antes dos 18 anos, mostre em quantos anos faltam para o
 // alistamento.
 //  - Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do
 // alistamento.
+//  - Se estiver com 18 anos, mostre que ele deve se alistar imediatamente.
+
+
+
 // 23) Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos
 // para todos, mas especialmente para mulheres. Faça um programa que leia nome,
 // sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo
