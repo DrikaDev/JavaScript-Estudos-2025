@@ -1,7 +1,8 @@
-let a = 10;
-let b = 5;
+let caracteres = "Desafio Target";
+let caracteresInvertidos = "";
 
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
+for (let i = caracteres.length - 1; i >= 0; i--) {
+    caracteresInvertidos += caracteres[i];
+}
+
+console.log(caracteresInvertidos);
